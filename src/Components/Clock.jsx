@@ -19,11 +19,21 @@ class Clock extends React.Component{
         },1000);
     }
 
+    componentWillUnmount() {
+         clearInterval ( () => {
+
+            this.setState({
+                date: new Date(),
+            });
+
+         },1000)
+    }
+
     render() {
 
         return (
             <h1 className="Heading">
-                <span className="text"> { this.state.date.toLocaleTimeString('bn-BD') } </span>
+                <span className="text"> { this.state.date.toLocaleTimeString(this.props.local) } </span>
             </h1>
         )
     }
