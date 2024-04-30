@@ -6,7 +6,7 @@ class Clock extends React.Component{
 
     constructor(props){
         super(props);
-        this.state = { date: new Date() }
+        this.state = { date: new Date(), local: 'bn-BD'  }
     }
 
     componentDidMount() {
@@ -29,17 +29,20 @@ class Clock extends React.Component{
          },1000)
     }
 
-    handleClick = (e) => {
-        e.preventDefault();
-        console.log('the button was clicked');
+    handleClick = () => {
+        this.setState({
+            local:'en-US'
+        });
     }
     render() {
+
+        const { local } = this.state;
 
         return (
             <>
 
             <h1 className="Heading">
-                <span className="text"> { this.state.date.toLocaleTimeString(this.props.local) } </span>
+                <span className="text"> { this.state.date.toLocaleTimeString(local) } </span>
             </h1>
             
              <button onClick={this.handleClick}> click </button>
