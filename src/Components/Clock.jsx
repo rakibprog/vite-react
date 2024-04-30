@@ -29,12 +29,23 @@ class Clock extends React.Component{
          },1000)
     }
 
+    handleClick = (e) => {
+        e.preventDefault();
+        console.log('the button was clicked');
+    }
     render() {
 
         return (
+            <>
+
             <h1 className="Heading">
                 <span className="text"> { this.state.date.toLocaleTimeString(this.props.local) } </span>
             </h1>
+            
+             <button onClick={this.handleClick}> click </button>
+            
+            </>
+           
         )
     }
 
