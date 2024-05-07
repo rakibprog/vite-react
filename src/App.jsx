@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import './App.css'
-import Clock from './Components/Clock'
+import Forms from './Components/Form'
+
 
 function App() {
   return (
     <>
-          <Clock local="bn-BD"></Clock>
+         <Forms></Forms>
     </>
   )
 }
